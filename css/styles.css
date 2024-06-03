@@ -198,13 +198,27 @@ img {
 .home__title-color {
   color: black;
 }
-#dynamic-text{
-  font-size: 24px;
+.typing-container {
   font-family: Arial, sans-serif;
-  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
 }
-#dynamic-content {
+#typed-output{
   color: #FCA311;
+}
+#typed-output::after {
+  content: '|';
+  display: inline;
+  animation: blink 1s infinite;
+  color: #FCA311;
+}
+@keyframes blink {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
 }
 .home__social {
   display: flex;
@@ -233,6 +247,23 @@ img {
 }
 
 /*BUTTONS*/
+/*.button {
+  display: inline-block;
+  background-color:#FCA311 ;;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}*/
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; /* Add space between buttons */
+  margin-top: 1rem; /* Adjust as needed for spacing above buttons */
+}
+
 .button {
   display: inline-block;
   background-color:#FCA311 ;;
@@ -242,6 +273,19 @@ img {
   border-radius: 0.5rem;
   transition: 0.3s;
 }
+
+@media screen and (max-width: 768px) {
+  .button-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .button {
+      width: 100%;
+      text-align: center;
+  }
+}
+
 .button:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
 }

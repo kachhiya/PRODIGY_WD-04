@@ -15,7 +15,6 @@ showMenu('nav-toggle','nav-menu')
 const navLink = document.querySelectorAll('.nav__link')
 
 var roles = ["Web developer", "Designer"];
-var dynamicContent = document.getElementById("dynamic-content");
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
@@ -24,19 +23,18 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-function rotateText() {
-    // Get the current text content
-    var currentText = dynamicContent.innerText;
-    // Find the index of the current text in the roles array
-    var currentIndex = roles.indexOf(currentText);
-    // Calculate the index of the next text, looping back to the beginning if necessary
-    var nextIndex = (currentIndex + 1) % roles.length;
-    // Set the next text as the content of the element
-    dynamicContent.innerText = roles[nextIndex];
-  }
+document.addEventListener('DOMContentLoaded', function() {
+    var options = {
+        strings: ["Web developer", "Designer"],
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 1000,
+        loop: true
+    };
 
-  // Call the rotateText function every 3 seconds
-  setInterval(rotateText, 3000);
+    var typed = new Typed("#typed-output", options);
+});
+
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
