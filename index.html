@@ -189,11 +189,12 @@
                 <h2 class="section-title">Contact</h2>
 
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
-                        <input type="button" value="Contact me" class="contact__button button">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact__form">
+                        <input type="hidden" name="access_key" value="ad4ba8fe-9acb-4688-a29f-2f2cf1310eb9">
+                        <input type="text" name="name" placeholder="Name" class="contact__input">
+                        <input type="mail" name="mail" placeholder="Email" class="contact__input">
+                        <textarea name="msg" id="" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
+                        <button type="submit" class="contact__button button">Submit</button>
                     </form>
                 </div>
             </section>
@@ -214,6 +215,7 @@
         <script src="https://unpkg.com/scrollreveal"></script>
 
         <!--===== MAIN JS =====-->
-        <script src="js/main.js"></script>
+        <!--<script src="js/main.js"></script>-->
+        <script src="https://web3forms.com/client/js/script.js" async defer></script>
     </body>
 </html>
